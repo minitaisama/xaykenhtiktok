@@ -101,7 +101,7 @@
             font-size: 13px;
             font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             background: #f3f4f6;
             color: #666;
             white-space: nowrap;
@@ -111,12 +111,15 @@
         .category-btn.active {
             background: linear-gradient(135deg, #ec4899, #f472b6);
             color: white;
-            box-shadow: 0 2px 12px rgba(236, 72, 153, 0.25);
+            box-shadow: 0 4px 16px rgba(236, 72, 153, 0.25);
+            transform: scale(1.02);
         }
 
         .category-btn:not(.active):hover {
             background: #e5e7eb;
             color: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         /* Video Grid */

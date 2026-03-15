@@ -44,7 +44,7 @@ img {
 [data-animate] {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-animate].visible {
@@ -100,7 +100,8 @@ img {
 }
 
 .nav-link:hover {
-    color: #1a1a1a;
+    color: #ec4899;
+    transform: translateY(-1px);
 }
 
 .btn-primary {
@@ -117,8 +118,8 @@ img {
 }
 
 .btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 24px rgba(236, 72, 153, 0.35);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.4);
 }
 
 .btn-outline {
@@ -153,8 +154,8 @@ img {
 }
 
 .btn-teal:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 24px rgba(20, 184, 166, 0.35);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(20, 184, 166, 0.4);
 }
 
 .header-cta {
@@ -420,6 +421,54 @@ img {
 
 /* Pain Points */
 .pain-points {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.pain-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pain-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 14px;
+    font-size: 14px;
+    color: #555;
+    transition: all 0.3s;
+}
+
+.pain-item.active {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.05), rgba(244, 114, 182, 0.08));
+    border-color: rgba(236, 72, 153, 0.2);
+    transform: translateY(-2px) scale(1.01);
+}
+
+/* Featured Star Icon for admin panel */
+.featured-star {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+}
+
+/* Pain Points */
     padding: 100px 0;
     text-align: center;
 }
@@ -831,17 +880,18 @@ img {
 
 .cta-card {
     background: white;
-    border: 1px solid #eee;
+    border: 1px solid #e8e8f3;
     border-radius: 20px;
     padding: 36px 32px;
     text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
-    background: linear-gradient(135deg, rgba(255,255,255,1), rgba(250, 245, 255, 0.5));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
 .cta-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(236, 72, 153, 0.15);
+    border-color: rgba(236, 72, 153, 0.3);
 }
 
 .cta-card-icon {
@@ -1016,11 +1066,38 @@ img {
 }
 
 .footer-links h4,
+.footer-contact {
+    text-align: left;
+    padding: 16px 0 0 16px 16px;
+    margin-bottom: 32px;
+}
+
 .footer-contact h4 {
-    color: white;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
-    margin-bottom: 20px;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: #f3f4f6;
+    border-radius: 12px;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.contact-item:hover {
+    background: rgba(236, 72, 153, 0.1);
+    transform: translateY(-2px);
+}
+
+.contact-icon {
+    font-size: 16px;
 }
 
 .footer-links a {
