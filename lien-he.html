@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - XayKenhTikTok | CNA Entertainment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Contact Hero */
+        .contact-hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background: linear-gradient(180deg, #fff 0%, #fff5f9 50%, #fff 100%);
+            text-align: center;
+        }
+
+        .contact-hero .hero-small-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ec4899;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .contact-hero .hero-title {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .contact-hero .hero-subtitle {
+            font-size: 17px;
+            color: #666;
+            max-width: 560px;
+            margin: 0 auto 16px;
+            line-height: 1.7;
+        }
+
+        .contact-hero .hero-note {
+            font-size: 14px;
+            color: #14b8a6;
+            font-weight: 500;
+        }
+
+        /* Contact Info Section */
+        .contact-info-section {
+            padding: 80px 0;
+        }
+
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 32px;
+            align-items: stretch;
+        }
+
+        .contact-connect-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #2d2b55 100%);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-connect-card .card-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #ec4899;
+            margin-bottom: 20px;
+        }
+
+        .contact-connect-card h3 {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 16px;
+        }
+
+        .contact-connect-card p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        .contact-details-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .contact-details-card .card-label {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 28px;
+        }
+
+        .contact-detail-group {
+            margin-bottom: 28px;
+        }
+
+        .contact-detail-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-detail-group .detail-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .contact-detail-group .detail-title .detail-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            background: rgba(236, 72, 153, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .contact-detail-group .detail-numbers {
+            display: flex;
+            gap: 16px;
+            padding-left: 46px;
+            flex-wrap: wrap;
+        }
+
+        .contact-detail-group .detail-numbers a {
+            font-size: 15px;
+            color: #ec4899;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .contact-detail-group .detail-numbers a:hover {
+            color: #d63384;
+        }
+
+        .contact-detail-group .detail-numbers .separator {
+            color: #ccc;
+        }
+
+        /* Value Cards */
+        .value-cards-section {
+            padding: 80px 0;
+            background: #fafafa;
+        }
+
+        .value-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .value-card {
+            background: white;
+            border: 1px solid #f0f0f0;
+            border-radius: 20px;
+            padding: 36px 32px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+
+        .value-card:nth-child(1)::before {
+            background: linear-gradient(135deg, #ec4899, #f472b6);
+        }
+
+        .value-card:nth-child(2)::before {
+            background: linear-gradient(135deg, #14b8a6, #2dd4bf);
+        }
+
+        .value-card:nth-child(3)::before {
+            background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .value-card .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .value-card:nth-child(1) .card-icon {
+            background: rgba(236, 72, 153, 0.08);
+        }
+
+        .value-card:nth-child(2) .card-icon {
+            background: rgba(20, 184, 166, 0.08);
+        }
+
+        .value-card:nth-child(3) .card-icon {
+            background: rgba(139, 92, 246, 0.08);
+        }
+
+        .value-card h3 {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            font-size: 14px;
+            color: #888;
+            line-height: 1.7;
+        }
+
+        /* Office Section */
+        .office-section {
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+
+        .office-card {
+            max-width: 640px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            padding: 48px 40px;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.04);
+        }
+
+        .office-card .office-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(236, 72, 153, 0.08);
+            border: 1px solid rgba(236, 72, 153, 0.15);
+            border-radius: 50px;
+            font-size: 13px;
+            color: #ec4899;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .office-card .office-title {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .office-card .office-subtitle {
+            font-size: 15px;
+            color: #ec4899;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .office-card .office-address {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .office-card .office-address .address-icon {
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        .office-map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #14b8a6;
+            transition: color 0.2s;
+        }
+
+        .office-map-link:hover {
+            color: #0d9488;
+        }
+
+        .office-map-link svg {
+            transition: transform 0.2s;
+        }
+
+        .office-map-link:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero .hero-title {
+                font-size: 40px;
+            }
+
+            .value-cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .office-card {
+                padding: 32px 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-hero .hero-title {
+                font-size: 32px;
+            }
+
+            .contact-connect-card,
+            .contact-details-card {
+                padding: 28px 24px;
+            }
+
+            .contact-detail-group .detail-numbers {
+                padding-left: 0;
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <svg width="60" height="28" viewBox="0 0 60 28" fill="none">
+                    <text x="0" y="24" font-family="Inter" font-weight="900" font-size="26" fill="black">EN.1</text>
+                </svg>
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Dịch vụ</a>
+                <a href="bao-gia.html" class="nav-link">Báo giá</a>
+                <a href="du-an.html" class="nav-link">Dự án</a>
+                <a href="lien-he.html" class="nav-link">Liên Hệ</a>
+            </nav>
+            <a href="lien-he.html" class="btn-primary header-cta">Đăng ký tư vấn</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link">Dịch vụ</a>
+            <a href="bao-gia.html" class="nav-link">Báo giá</a>
+            <a href="du-an.html" class="nav-link">Dự án</a>
+            <a href="lien-he.html" class="nav-link">Liên Hệ</a>
+            <a href="lien-he.html" class="btn-primary" style="text-align:center;margin-top:12px;">Đăng ký tư vấn</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <p class="hero-small-text" data-animate="fade-up">CNA Entertainment</p>
+            <h1 class="hero-title" data-animate="fade-up" data-delay="100">Liên Hệ</h1>
+            <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+                Kết nối ngay để bắt đầu xây dựng hệ thống nội dung chuyên nghiệp cho thương hiệu của bạn.
+            </p>
+            <p class="hero-note" data-animate="fade-up" data-delay="300">Chúng tôi phản hồi trong vòng 24h làm việc.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid" data-animate="fade-up">
+                <div class="contact-connect-card">
+                    <div class="card-label">KẾT NỐI</div>
+                    <h3>Sẵn sàng xây dựng thương hiệu trên TikTok?</h3>
+                    <p>Liên hệ ngay với đội ngũ CNA Entertainment để được tư vấn chiến lược nội dung phù hợp nhất cho thương hiệu của bạn.</p>
+                </div>
+                <div class="contact-details-card">
+                    <div class="card-label">THÔNG TIN LIÊN HỆ</div>
+
+                    <div class="contact-detail-group">
+                        <div class="detail-title">
+                            <div class="detail-icon">📞</div>
+                            <span>Số điện thoại (Anh Nam)</span>
+                        </div>
+                        <div class="detail-numbers">
+                            <a href="tel:0523860068">0523 860 068</a>
+                            <span class="separator">|</span>
+                            <a href="tel:0888430620">0888 430 620</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail-group">
+                        <div class="detail-title">
+                            <div class="detail-icon">💬</div>
+                            <span>Zalo (Anh Nam)</span>
+                        </div>
+                        <div class="detail-numbers">
+                            <a href="https://zalo.me/0523860068" target="_blank">0523 860 068</a>
+                            <span class="separator">|</span>
+                            <a href="https://zalo.me/0888430620" target="_blank">0888 430 620</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Cards Section -->
+    <section class="value-cards-section">
+        <div class="container">
+            <div class="value-cards-grid">
+                <div class="value-card" data-animate="fade-up" data-delay="0">
+                    <div class="card-icon">⚡</div>
+                    <h3>Hiệu quả</h3>
+                    <p>Tối ưu quy trình, rút ngắn thời gian sản xuất nhưng vẫn đảm bảo chất lượng đầu ra cao nhất</p>
+                </div>
+                <div class="value-card" data-animate="fade-up" data-delay="100">
+                    <div class="card-icon">🎯</div>
+                    <h3>Chính xác</h3>
+                    <p>Thấu hiểu brief, bám sát mục tiêu thương hiệu và đối tượng mục tiêu trong từng sản phẩm</p>
+                </div>
+                <div class="value-card" data-animate="fade-up" data-delay="200">
+                    <div class="card-icon">💎</div>
+                    <h3>Giá thành</h3>
+                    <p>Tối ưu chi phí sản xuất, mang đến giá trị vượt trội so với ngân sách đầu tư</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Location Section -->
+    <section class="office-section">
+        <div class="container">
+            <div class="office-card" data-animate="fade-up">
+                <div class="office-badge">
+                    <span>📍</span>
+                    <span>Địa điểm</span>
+                </div>
+                <h2 class="office-title">VĂN PHÒNG LÀM VIỆC</h2>
+                <p class="office-subtitle">CNA Entertainment</p>
+                <p class="office-address">
+                    <span class="address-icon">🏢</span>
+                    458/64 D. 3 Tháng 2, Quận 10, TP. Hồ Chí Minh
+                </p>
+                <a href="https://www.google.com/maps/search/458%2F64+D.+3+Th%C3%A1ng+2%2C+Qu%E1%BA%ADn+10%2C+TP.+H%E1%BB%93+Ch%C3%AD+Minh" target="_blank" class="office-map-link">
+                    Xem trên Google Maps
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="70" height="32" viewBox="0 0 70 32" fill="none">
+                            <text x="0" y="26" font-family="Inter" font-weight="900" font-size="28" fill="white">EN.1</text>
+                        </svg>
+                    </div>
+                    <p>Dịch vụ xây dựng kênh TikTok chuyên nghiệp, giúp thương hiệu của bạn được nhớ, được tin và được mua.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="TikTok">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .55.04.81.1v-3.5a6.37 6.37 0 0 0-.81-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V9.19a8.16 8.16 0 0 0 4.76 1.51v-3.45a4.85 4.85 0 0 1-1-.56z"/></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="#1a1a1a"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Dịch vụ</h4>
+                    <a href="#">Quay phim/Sản xuất video lẻ</a>
+                    <a href="#">Tư vấn chiến lược Content</a>
+                    <a href="#">Đào tạo nhân sự In-house</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Liên hệ</h4>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>0523 860 068</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <span>0888 430 620</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>458/64 Đ. 3 Tháng 2, Quận 10, TP. Hồ Chí Minh</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 XayKenhTikTok. All rights reserved.</span>
+                <div class="footer-legal">
+                    <a href="#">Chính sách bảo mật</a>
+                    <a href="#">Điều khoản sử dụng</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
