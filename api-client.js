@@ -4,7 +4,10 @@
  * Progressive enhancement: falls back to hardcoded HTML if API unavailable
  */
 (function () {
-  const API_BASE = 'http://localhost:4000/api';
+  // Auto-detect API base: use data attribute, meta tag, or same-origin /api
+  const API_BASE = document.documentElement.dataset.apiBase
+    || document.querySelector('meta[name="api-base"]')?.content
+    || (window.location.hostname === 'localhost' ? 'http://localhost:4000/api' : '/api');
 
   async function fetchJSON(url) {
     try {

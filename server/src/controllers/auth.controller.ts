@@ -50,7 +50,8 @@ export class AuthController {
 
   static async updateMe(req: AuthRequest, res: Response): Promise<void> {
     try {
-      const user = await AuthService.updateProfile(req.user!.userId, req.body);
+      const { name, avatar } = req.body;
+      const user = await AuthService.updateProfile(req.user!.userId, { name, avatar });
       res.json(user);
     } catch (err) {
       res.status(500).json({ error: 'Failed to update profile' });

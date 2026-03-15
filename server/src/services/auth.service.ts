@@ -105,7 +105,12 @@ export class AuthService {
   }
 
   static async updateProfile(userId: string, data: { name?: string; avatar?: string }) {
-    await db('users').where({ id: userId }).update({ ...data, updated_at: new Date() });
+    const allowed: Record<string, any> = {};
+    if (data.name !== undefined) allowed.name = data.name;
+    if (data.avatar !== undefined) allowed.avatar = data.avatar;
+    if (Object.keys(allowed).length > 0) {
+      await db('users').where({ id: userId }).update({ ...allowed, updated_at: new Date() });
+    }
     return this.getProfile(userId);
   }
 }

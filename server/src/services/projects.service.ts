@@ -39,10 +39,16 @@ export class ProjectsService {
     return project;
   }
 
+  private static readonly ALLOWED_FIELDS = ['title', 'description', 'thumbnail', 'video_url', 'category', 'package', 'featured'] as const;
+
   static async update(id: string, data: Partial<Project>) {
+    const sanitized: Record<string, any> = {};
+    for (const key of this.ALLOWED_FIELDS) {
+      if (data[key] !== undefined) sanitized[key] = data[key];
+    }
     const [project] = await db<Project>('projects')
       .where({ id })
-      .update({ ...data, updated_at: new Date() })
+      .update({ ...sanitized, updated_at: new Date() })
       .returning('*');
     return project;
   }
