@@ -880,6 +880,8 @@ img {
     display: block;
     text-align: center;
     width: 100%;
+    min-width: 200px;
+    padding: 14px 24px;
 }
 
 /* Trust Section */
